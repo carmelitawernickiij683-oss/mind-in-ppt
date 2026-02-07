@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* 优化触摸交互 */
+  button, a {
+    min-height: 44px; /* iOS 推荐的最小触摸目标 */
+    min-width: 44px;
+  }
+
+  /* 防止双击缩放 */
+  * {
+    touch-action: manipulation;
+  }
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 移动端优化的输入框 */
+@media (max-width: 640px) {
+  input,
+  textarea {
+    font-size: 16px; /* 防止 iOS 自动缩放 */
+  }
+}
+
+/* 移动端优化的下拉菜单 */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 50vh;
+    overflow-y: auto;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 移动端优化的模态框 */
+@media (max-width: 640px) {
+  .modal {
+    margin: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+  }
+}
