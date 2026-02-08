@@ -3,6 +3,7 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
+  "packageManager": "npm",
   "env": {
     "ZHIPUAI_API_KEY": "@zhipu-api-key"
   }
